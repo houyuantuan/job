@@ -18,9 +18,9 @@
 
    
 
-####             2.请求体数据
+2.请求体数据
 
-- 表单类型
+- ##### 表单类型
 
   ```bash
   body=request.POST  ---QueryDict对象
@@ -29,7 +29,7 @@
 
   
 
-- #### 非表单类型	     
+- ##### 非表单类型	     
 
   ```bash
   90%是json类型
@@ -55,43 +55,36 @@
 - ​           默认位置  from django.urls import register_converter # 默认路由转换器地址
 - ​	   视图内部关键字参数必须和路由中关键字一样
 
-
-
 ####    步骤
 
 1. ​    在项目任何可以导入模块的路径新建一个python文件  如 converters.py,然后复制默认路由器的样本，再改名字，改正则，达到自己想要效果
 
-   
+    
 
-    ```bash
-class MobileConverter:
-
-  regex = '1[3-9]\d{9}'
-
-  def to_python(self, value):
-     
-      return int(value)
-
-  def to_url(self, value):
-     
-      return str(value)
+    ```python
+    class MobileConverter:
+      regex = '1[3-9]\d{9}'
+    
+      def to_python(self, value):
+        return int(value)
+      def to_url(self, value):
+      	return str(value
+      	)
+    ​```
     ```
 
-​         2.根目录urls.py 注册总路由  
+​        2.根目录urls.py 注册总路由  
 
-        ```bash
+```python
 from django.urls import register_converter
 
 from 自己新建py文件 import 自己定义路由转换器的类:如下
 from .converters import MobileConverter
-
-        ```
+```
 
 
 
 ​          3.根据自己定义的正则注册子路由
-
-
 
 ### Http响应
 
