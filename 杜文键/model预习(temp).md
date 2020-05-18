@@ -14,9 +14,10 @@
 
 ![1589729454894](C:\Users\86155\AppData\Roaming\Typora\typora-user-images\1589729454894.png)
 
-        ```python
+
+
 因为 django 中有一个管理站点, 里面也定义了很多模型类
-        ```
+
 
 
 
